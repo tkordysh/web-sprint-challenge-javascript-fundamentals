@@ -64,9 +64,15 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  function animalNames(array){
+    const displayNames = [];
+    array.forEach(element => {
+      displayNames.push(`name: ${element.animal_name}, scientific: ${element.scientific_name}`)
+    });
+    return displayNames;
+  }; 
+
+  console.log('Topic 2, req 1', animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
@@ -75,20 +81,27 @@ const zooAnimals = [
   For example: ['jackal, asiatic', .....]
   */
 
-  function lowerCaseNames(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
-  
+  function lowerCaseNames(array){
+    const names = [];
+    array.map(element => {
+    names.push(element.animal_name.toLowerCase())
+    });
+    return names;
+  }; 
+
+  console.log('Topic 2, req 2', lowerCaseNames(zooAnimals));
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
   Using lowPopulationAnimals use .filter() to create a new array of objects which contains only the animals with a population of less than 5.
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
-  }
+  function lowPopulationAnimals(array){
+      const pops = array.filter(element => element.population < 5)
+      return pops;
+  };
   
+  console.log('Topic 2, req 3', lowPopulationAnimals(zooAnimals));
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -96,10 +109,13 @@ const zooAnimals = [
   Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count.
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(array){
+    const totalPop = array.reduce((previousValue, currentValue) => {
+      return previousValue + currentValue.population
+      }, 0);
+      return totalPop;
   }
-  
+  console.log('Topic 2, req 4', USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
