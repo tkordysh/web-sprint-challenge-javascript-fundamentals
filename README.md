@@ -26,13 +26,34 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+    '.map', '.reduce', and '.filter' are all methods we can call on arrays. 
+       - The .map method is generally used for converting data in an array and returning a new array with that updated data without changing the original array. Say you had an array full of strings, if you wanted to convert all the characters to upper case you could call .map on the array, feed in a variable like 'element', and then return element.key.toUpperCase(); to return a new array with the new data. 
+       - The .reduce method is used to return a single value, not a new array. It can be used for anything but generally is used for multiplication and addition. If
+         you had an array full of countries and their population data, for example, you could call .reduce on the array, feed in the proper arguments, and return a
+         single value representing the total population of all countries in the array combined. 
+         The .filter method filters through the data, checking it against a boolean value. If the data checked returns true, it will be added to a new array.
+         This new array will be full of data that passed the filter's test, and the original array will be unchanged. Using the same countries array example, you
+         could filter out all countries with more than 'x' amount of people living there to create a new array of only heavily populated countries.
+
 2. Explain the difference between a callback and a higher order function.
+
+    A callback is simply a function which is fed into another function as an argument. A higher order function is that function receiving the callback as an argument. 
 
 3. Explain what a closure is.
 
+    A closure occurs when a function accesses a variable defined in an outer function. 
+
 4. Describe the four principles of the 'this' keyword.
 
+    - The first principle of the 'this' keyword is window binding. The idea that without any context, 'this' will be bound to the window or globally scoped. 
+    - The second is implicit binding, which refers commonly to objects with methods. When the method is invoked (array.map() for example), whatever is 
+    on the left of the dot is 'this'.
+    - The third is explicit binding, where we explicitly define what 'this' should be using .call, .bind, or .apply.
+    - The fourth is new binding, when a function is invoked with the 'new' keyword, 'this' points to the object that is being created. 
+
 5. Why do we need super() in an extended class?
+
+    When creating a child class, we must use super() in our constructor to call the property keys over from the parent class and give the child class access to them. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
